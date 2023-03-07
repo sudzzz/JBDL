@@ -1,0 +1,11 @@
+
+r
+java:S1104"PMake gear a static final constant or non-public and provide accessors if needed.(šÕÖãşÿÿÿÿ8Šã¼äŞ0
+s
+java:S1104"QMake speed a static final constant or non-public and provide accessors if needed.(¥ğ‡ğøÿÿÿÿ8Šã¼äŞ0
+r
+java:S1104"VMake seatHeight a static final constant or non-public and provide accessors if needed.(Å‹åi8Šã¼äŞ0
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±š‡İ8§ã¼äŞ0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Ü§»8èæ¼äŞ0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ğ’Æİıÿÿÿÿ8éæ¼äŞ0
+Z	java:S106&"9Replace this use of System.out or System.err by a logger.(ŸÎµ³úÿÿÿÿ8÷æ¼äŞ0

@@ -1,0 +1,11 @@
+
+C
+java:S1604%"(Make this anonymous inner class a lambda(·ù¡ãùÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İ†ìƒşÿÿÿÿ
+]
+java:S1854!"BRemove this useless assignment to local variable "funcInterface3".(ªšˆ‘şÿÿÿÿ
+S	java:S106""9Replace this use of System.out or System.err by a logger.(Îö‡şÿÿÿÿ
+N
+java:S1481!"3Remove this unused "funcInterface3" local variable.(ªšˆ‘şÿÿÿÿ
+M	java:S106,"9Replace this use of System.out or System.err by a logger.(Éí¬
+S	java:S106-"9Replace this use of System.out or System.err by a logger.(¹ÇÉÿúÿÿÿÿ

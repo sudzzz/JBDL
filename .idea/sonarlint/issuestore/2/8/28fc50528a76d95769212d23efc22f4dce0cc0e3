@@ -1,0 +1,24 @@
+
+E
+java:S3740r"/Provide the parametrized type for this generic.(”ßð¡
+]
+java:S2259P"GA "NullPointerException" could be thrown; "rightPop()" can return null.(Í¬‘¦
+\
+java:S2259G"FA "NullPointerException" could be thrown; "leftPop()" can return null.(Í¬‘¦
+Z
+java:S2259Z"DA "NullPointerException" could be thrown; "range()" can return null.(Í¬‘¦
+h
+java:S6204K"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+Z
+java:S1612J"?Replace this lambda with method reference 'Person.class::cast'.(Òíªžüÿÿÿÿ
+h
+java:S6204T"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+Z
+java:S1612S"?Replace this lambda with method reference 'Person.class::cast'.(Òíªžüÿÿÿÿ
+h
+java:S6204^"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+Z
+java:S1612]"?Replace this lambda with method reference 'Person.class::cast'.(Òíªžüÿÿÿÿ
+h
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹
+W	java:S125…"<This block of commented-out lines of code should be removed.(ÒÌâ–øÿÿÿÿ

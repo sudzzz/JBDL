@@ -1,0 +1,97 @@
+@CreationTimestamp and @UpdateTimestamp --> It is functionality of the hibernate in which it inserts the local time of
+                                            application server, not the database server.
+
+We should never store foreign keys as list. It will make our queries vey slow.
+
+There are 2 types of relationships in JPA:-
+1. Unidirectional --> We are mapping student to book and not vice versa in java context. It is weaker compared to bidirectional.
+2. Bi-directional --> We are mapping student to book and list of books to student. But this list of books to student mapping is only
+                      for java context and will not be inserted in table.
+
+To establish relation between to Entity classes which holds object of some other entity class, we give annotations to get clear
+understanding of relation like:-
+@OneToOne
+@OneToMany
+@ManyToOne
+@ManyToMany
+
+@AtoB --> Define relation considering A is current class and B is the class whose object is present in A.
+@OneToMany(mappedBy="student")
+private List<Book> bookList       --> In this, we are saying that there is one-to-many relation between Student and Book class
+                                      and Student is mapped to Book with respect to an attribute named "student" which is present
+                                      in Book class. No column of book list is inserted in the table. To insert in table we add
+                                      another annotation @JoinColumn .This feature is useful when we don't insert bookList in
+                                      Student table but want to know what books a particular student is having, then this
+                                      functionality can be achieved. In normal flow of api sql query would be
+                                                select * from student where id = ?
+                                      also  there will be a query which will be triggered by hibernate
+                                                select * from book where student = ?
+                                      Result of above query will be stored in bookList and returned as the response of get api.
+Note --> mappedBy="a" 'a' will always be java attribute name and not column name of table.
+There is one more attribute in @OneToMany which is FetchType. By default, fetchType is lazy. They are of two types:-
+1. Lazy -> It will retrieve the value whenever we need it.
+2. Eager -> It will make the query first and store the result.
+
+
+@Enumerated --> Used to store enums in table. It comes from jakarta. persistence api. There are two types of enum values:-
+1. Ordinal --> These are numbers given to every enum and are stored in db.
+2. String --> To store enum as string, value should be selected as string.
+By default, value is Ordinal.
+
+@JoinColumn --> It is used to create a foreign key reference for hibernate with object other class present in it. By default, it
+                maps with primary key of other table. We can also give the column name with which we want to map.
+
+We generally use, integer as primary key compared to string because, string comparisons are costlier compared to numeric
+comparison as size of int data type is also less. Also, SQL creates its indexing on primary key i.e. it is sorted in
+ascending/descending order
+
+To make a composite key where combination of more than one column will behave as primary key, we have to implement Serializable
+interface. This is because of constraint that primary key should always be serializable.
+
+@Query --> It is present in SpringDataJpa. Even if we don't use hibernate, we can still use this annotation.
+
+There are 2 ways to write queries:
+1. Native Query - Works as SQL on tables
+            @Query(value = "select a from author a where a.email = :my_email",nativeQuery = true)--> author --> table name in database
+            Author getAuthorGivenEmailId(String my_email);
+            Or
+            @Query(value = "select a from author a where a.email = ?1",nativeQuery = true) --> ?1 represents the first parameter index of the function.
+            Author getAuthorGivenEmailId(String my_email);
+2. JPQL - Java persistence query language. Works on java objects.
+          @Query(value = "select a from Author a where a.email = :my_email") --> Author --> Entity Class name
+           Author getAuthorGivenEmailIdJPQL(String my_email);
+3. Don't have to write the query --> We have to write the names of the functions in such a way that it matches the JPA standards.
+
+
+By default, every query is JPQL. Before starting of application JPA scans all the JPQL queries to check if they are valid or not.
+If some errors are there, the application will not start. Whereas in native query even if we write wrong table name by mistake, they
+are not checked and the application starts. Therefore, it is recommended to use JPQL over Native query.
+
+CommandLineRunner is an interface present in spring-boot-jar. When we implement it in SpringBootApplication class, we can run
+certain commands which we want to execute after our application is started. These commands are written in run method. It gives
+a non-static function where we can use variables of non-static reference.
+
+Autowired never works with static keyword. Static means to be associated with that class. Autowired means injecting from the IOC
+container.
+
+We are not using @Repository on the repository interface but still it is working and beans are getting created. This is because
+SimpleJpaRepository which implements JpaRepository has @Repository annotation which creates bean.
+
+@Transactional
+
+We can use @Transactional to wrap a method in a database transaction.
+It allows us to set propagation, isolation, timeout, read-only, and rollback conditions for our transaction. We can also specify
+the transaction manager. Spring creates a proxy, or manipulates the class byte-code, to manage the creation, commit, and rollback
+of the transaction. In the case of a proxy, Spring ignores @Transactional in internal method calls.
+Proxy is kind of manager which manages our transaction. We can put @Transactional annotation over the top of public functions only.
+
+Spring Data JPA repository methods does not recognise property names with underscores. So we should not name attributes of our
+Entity class with underscore present in it.
+
+For using mongodb in case of @Entity of model classes, we will give @Document annotation. In case of Repository we will extend
+MongoRepository instead of JpaRepository. With respect to resources it will be spring.data.mongodb.uri instead of spring.datasource.url.
+And w.r.t pom dependency will change to spring-boot-starter-data-mongo instead of spring-boot-starter-data-jpa
+
+LibraryConfig is created to define beans for authorisation + authentication + PasswordEncoder + Redis.
+In spring-security, we can have only one UserDetails entity. For this reason we are creating a new MyUser class which will
+inherit from UserDetails class. This is done as we have 2 types of user, student and admin.

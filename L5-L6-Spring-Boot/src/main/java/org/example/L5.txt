@@ -1,0 +1,26 @@
+Load balancer is generally the domain name of the website like amazon.com, google.com which routes the request to different servers
+depending on the traffic. It is generally a script which decides in which server the request will be transferred.
+
+When response is received with respect to user interaction it is known as web application.
+When response is received without user interaction it is known as web server.
+
+When we run spring-boot application it initializes the servlet engine. Servlets are nothing but routing mechanisms which are
+present in embedded servers. Its role is to accept the request and return it back to the client. After accepting, it routes the
+request to a certain class in project i.e. Controller.
+
+There are 2 types of scaling:-
+1. Vertical Scaling --> It is scaling the resources on a single machine and adding more functionalities to it.
+2. Horizontal Scaling --> It is done by having multiple instances of a single machine type.
+
+mvn dependency:tree is the command to get the tree structure of the maven dependencies in the terminal.
+
+Any class which have @Component directly or indirectly, object of that class will be managed by spring.
+
+Command to run spring project from terminal --> mvn clean package && java -jar target/L5-L6-Spring-Boot-1.0-SNAPSHOT.jar
+
+There are two main features of spring-boot, Inversion Of Control (IOC) and Dependency Injection (DI). Instead of us creating,
+objects, we give this responsibility to spring-boot which creates and manages objects. These objects which are created can be
+injected in other classes.
+
+All annotations are interface.
+

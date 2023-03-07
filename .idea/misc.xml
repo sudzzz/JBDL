@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EntryPointsManager">
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="lombok.NoArgsConstructor" />
+      <item index="1" class="java.lang.String" itemvalue="org.springframework.context.annotation.Bean" />
+      <item index="2" class="java.lang.String" itemvalue="org.springframework.stereotype.Repository" />
+      <item index="3" class="java.lang.String" itemvalue="org.springframework.stereotype.Service" />
+      <item index="4" class="java.lang.String" itemvalue="org.springframework.web.bind.annotation.ExceptionHandler" />
+      <item index="5" class="java.lang.String" itemvalue="org.springframework.web.bind.annotation.PostMapping" />
+      <item index="6" class="java.lang.String" itemvalue="org.springframework.web.bind.annotation.RestController" />
+    </list>
+    <writeAnnotations>
+      <writeAnnotation name="org.springframework.beans.factory.annotation.Autowired" />
+    </writeAnnotations>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/L4-Maven/pom.xml" />
+        <option value="$PROJECT_DIR$/L4-Maven-Calculator/pom.xml" />
+        <option value="$PROJECT_DIR$/L5_and_L6_Spring-Basics/pom.xml" />
+        <option value="$PROJECT_DIR$/L5_and_L6-Spring-Basics/pom.xml" />
+        <option value="$PROJECT_DIR$/L5-L6-Springboot/pom.xml" />
+        <option value="$PROJECT_DIR$/L5-L6-Spring-Boot/pom.xml" />
+        <option value="$PROJECT_DIR$/L7-RestApis/pom.xml" />
+        <option value="$PROJECT_DIR$/L7-Rest-Apis/pom.xml" />
+        <option value="$PROJECT_DIR$/L8-MySQL/pom.xml" />
+        <option value="$PROJECT_DIR$/L8-L9-MySQL/pom.xml" />
+        <option value="$PROJECT_DIR$/L10_Spring_JPA/pom.xml" />
+        <option value="$PROJECT_DIR$/L10-11-Spring-JPA-Hibernate/pom.xml" />
+        <option value="$PROJECT_DIR$/L11-MultipleDatasource/pom.xml" />
+        <option value="$PROJECT_DIR$/minor1/pom.xml" />
+        <option value="$PROJECT_DIR$/L12-MinorProject1/pom.xml" />
+        <option value="$PROJECT_DIR$/L12-13-14-MinorProject1/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-redis/pom.xml" />
+        <option value="$PROJECT_DIR$/L15-16-Redis/pom.xml" />
+        <option value="$PROJECT_DIR$/L17-Spring-Security/pom.xml" />
+        <option value="$PROJECT_DIR$/L18_Spring Security (In memory)/pom.xml" />
+        <option value="$PROJECT_DIR$/L18-Spring-Security-In-Memory/pom.xml" />
+        <option value="$PROJECT_DIR$/L19_Spring_Security (UserDetails)/pom.xml" />
+        <option value="$PROJECT_DIR$/L19-Spring-Security-User-Details/pom.xml" />
+        <option value="$PROJECT_DIR$/L12-13-14-20-MinorProject1And2/pom.xml" />
+        <option value="$PROJECT_DIR$/L21-Spring-OAuth2.0/pom.xml" />
+        <option value="$PROJECT_DIR$/L23-24-MajorProject-Ewallet/pom.xml" />
+        <option value="$PROJECT_DIR$/L23-24-MajorProject-Ewallet/user-service/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="corretto-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

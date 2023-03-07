@@ -1,0 +1,11 @@
+@EnableJpaRepositories --> Tells where we will run sql queries. Here it tells hibernate which packages to scan and perform db
+                            operations on.
+
+Basically to have multiple database connection in one project, we need to configure three things:-
+1. Datasource
+2. EntityManager
+3. TransactionManager
+
+When we have multiple data sources, we need to map EntityManager for every data source. If in a project, there is only one db, then
+default implementation of data source, takes care of EntityManager.
+

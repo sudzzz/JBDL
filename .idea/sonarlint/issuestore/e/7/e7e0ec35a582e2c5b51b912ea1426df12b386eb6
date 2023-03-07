@@ -1,0 +1,15 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Í—©†ùÿÿÿÿ
+g
+java:S22592"EA "NullPointerException" could be thrown; "scanner" is nullable here.(ƒµ¹ıÿÿÿÿ8‘¶à£ä0
+‰
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(œû¿Ø8€¸à£ä0
+]	java:S125"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8€¸à£ä0
+]	java:S125"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8¸à£ä0
+Z	java:S106."9Replace this use of System.out or System.err by a logger.(·ùßóıÿÿÿÿ8©¹à£ä0
+L
+java:S2093+"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8«¹à£ä0
+]	java:S1258"<This block of commented-out lines of code should be removed.(ÕÆ©åøÿÿÿÿ8Í¹à£ä0
+b
+java:S2440?"@Remove this instantiation of "SumOfSquaresOfEvenNumbersInAList".(´…œ’ıÿÿÿÿ8»óë£ä0
+J	java:S108?")Either remove or fill this block of code.(´…œ’ıÿÿÿÿ8»óë£ä0

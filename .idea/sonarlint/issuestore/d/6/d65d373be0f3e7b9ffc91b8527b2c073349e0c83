@@ -1,0 +1,25 @@
+
+`	java:S1124"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+`	java:S112v"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ
+x
+java:S1192/"]Define a constant instead of duplicating this literal "Insert statement result - {}" 3 times.(ΛΰΛύÿÿÿÿ
+e
+java:S2095;"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Χ•¬Υ
+j
+java:S2095^"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(—Ύρώÿÿÿÿ
+b
+java:S2095o"GUse try-with-resources or close this "Statement" in a "finally" clause.(ι°Αµώÿÿÿÿ
+b
+java:S2095M"GUse try-with-resources or close this "Statement" in a "finally" clause.(ι°Αµώÿÿÿÿ
+b
+java:S2095~"GUse try-with-resources or close this "Statement" in a "finally" clause.(ι°Αµώÿÿÿÿ
+C
+java:S1125/"(Remove the unnecessary boolean literals.(ΛΰΛύÿÿÿÿ
+C
+java:S1125c"(Remove the unnecessary boolean literals.(ΛΰΛύÿÿÿÿ
+>
+java:S1125e"(Remove the unnecessary boolean literals.(‘ Μµ
+C
+java:S1172l"-Remove this unused method parameter "person".(Έ…™§
+C
+java:S1125s"(Remove the unnecessary boolean literals.(ΛΰΛύÿÿÿÿ

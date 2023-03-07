@@ -1,0 +1,25 @@
+Oauth2.0
+
+1. End user revoking the access of the oauth2.0 client app from the provider (Ex: github)
+
+Why ? Maybe the user no longer wants to share his/her data with the oauth2.0 client
+
+2. Oauth 2.0 revoking the authority given by the end user 
+
+Why ? Maybe the oauth2.0 client has made changes in their policy / scope and they want users to authorise again with the changed scope
+
+
+
+—————————————————X———————————————————
+
+1. From our hyper link —> http://localhost:8080/oauth2/authorization/github
+2. Step 1 redirected to —> https://github.com/login/oauth/authorize?response_type=code&client_id=b767ecfb32547411ec84&scope=read:user&state=tDFzBWpZjgVjgRrHRRT8roG6WouYznDlCKv3HhKN7tc%3D&redirect_uri=http://localhost:8080/login/oauth2/code/github
+3. Once the end-user authorizes oauth2.0 client to use their resources on github, the following call is made by github’s FE: https://github.com/login/oauth/authorize
+4. After step 3 GitHub redirected to : http://localhost:8080/login/oauth2/code/github?code=32df6f3a74ff11a213c4&state=KNN_EdKbo7ez8Bx4Xvp7ec17SRigObaYToPWFVB5ub4%3D which is nothing but our authorisation callback url
+5. Authorisation call back url redirects to our homepage url: http://localhost:8080
+
+XSRF token is set when the callback url is executed from github.
+
+
+
+

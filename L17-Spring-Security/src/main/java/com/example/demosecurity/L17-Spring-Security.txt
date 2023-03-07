@@ -1,0 +1,23 @@
+Https status 302 is shown when our request has been redirected to other url. And the location where it has redirected is shown in'
+Response headers.
+
+When we use spring security, by default all the apis created will need authentication first. By default, spring-security will generate
+a password at startup-time of the application. And default username will be "user".
+
+Cookie contains some data which are given by backend to frontend. And frontend gives this data back to backend in subsequent requests.
+so that user does not have to pass those details again and again. It is used for enhancing user experience.
+By default, spring-security creates a cookie named JSESSIONID, which contains a value. It is sent to frontend via response headers.
+When the server restarts, a new JSESSIONID is created. Now if a api call is made with JSESSIONID of previous session (It is sent
+in request headers) and it does not match with new JSESSIONID, the user authentication fails and again default login screen appears.
+
+So BE will verify the JSESSIONID cookie given by the FE. If the JSESSIONID is of an authenticated user, it will not redirect to
+/login API. Otherwise, it will redirect to /login and after entering the correct credentials, a new logged in JSESSIONID will be
+given by BE to FE.
+
+JSESSIONID with authenticated user is the Session of the user.
+
+Spring Security Filter Chain - It is like interceptor to reject some requests of unauthenticated user. It comes to picture after
+dispatcher servlet listens to the incoming request.
+
+security context -> It is kind of IOC container(Application Context) which holds the security related things.
+security context holder -> It is a wrapper which tells how spring security will work.

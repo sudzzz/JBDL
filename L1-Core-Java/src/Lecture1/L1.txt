@@ -1,0 +1,19 @@
+Using default keyword, interfaces can have non-abstract functions which has a body. This feature was added from JAVA 8.
+Default functions are automatically implemented in inherited class.
+
+For best practices we create a reference of interface and use it on the instance of class implementing that interface to use all
+the functions(abstract + default) declared in Interface and functions declared in class.
+
+For example, we make an interface named PasswordEncryption with two functions, encrypt() and encode().
+There are also two classes BcryptEncoder and MD5Encoder which encrypts these file. The best way to use all the functionalities is
+to make instances of classes using reference of interface. For example
+
+PasswordEncryption obj1 = new BcryptEncoder();
+or
+PasswordEncryption obj2 = new MD5Encoder();
+
+
+Functional Interfaces are interfaces that have only one abstract method. If more methods are there, then it should be default.
+@FunctionalInterface annotation is used to apply such restrictions.
+
+Native functions are functions which makes call to OS library. These are not present as part of java code.

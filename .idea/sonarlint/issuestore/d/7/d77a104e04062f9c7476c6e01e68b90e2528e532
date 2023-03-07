@@ -1,0 +1,5 @@
+
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Ôá
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(±š‡İ
+i	java:S116"ORename this field "CGPA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãœ´±şÿÿÿÿ
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¶Üª¿8ÄñÔŞ0

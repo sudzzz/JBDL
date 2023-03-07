@@ -1,0 +1,22 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Џя°t
+“
+java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(є™Ъ78ЪСЫЄд0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ЮьФІыяяяя8ЪСЫЄд0
+X	java:S125"<This block of commented-out lines of code should be removed.(‡‹ґЬ8ЫСЫЄд0
+]	java:S125"<This block of commented-out lines of code should be removed.(¦Уыіщяяяя8ЫСЫЄд0
+]	java:S125"<This block of commented-out lines of code should be removed.(«™¤Щэяяяя8ЫСЫЄд0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(•­•»8ЫСЫЄд0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(іЙЎщ8ЬСЫЄд0
+X	java:S125"<This block of commented-out lines of code should be removed.(г–ЮЮ8ЬСЫЄд0
+X	java:S125"<This block of commented-out lines of code should be removed.(г–ЮЮ8ЬСЫЄд0
+U	java:S106%"9Replace this use of System.out or System.err by a logger.(№љяЬ8ЬСЫЄд0
+W	java:S125!"<This block of commented-out lines of code should be removed.(пК®8ЬСЫЄд0
+U	java:S106'"9Replace this use of System.out or System.err by a logger.(Рс—»8ЬСЫЄд0
+Z	java:S106+"9Replace this use of System.out or System.err by a logger.(‘«е”ъяяяя8ЭСЫЄд0
+h
+java:S2445,"F"i" is a method parameter, and should not be used for synchronization.(Ћ э¬яяяяя8эСЫЄд0
+m
+java:S2236-"PRefactor the synchronisation mechanism to not use a Thread instance as a monitor(Фоњґ8юСЫЄд0
+W
+java:S2274-":Remove this call to "wait" or move it into a "while" loop.(Фоњґ8яСЫЄд0

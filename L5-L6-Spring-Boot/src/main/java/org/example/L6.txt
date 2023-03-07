@@ -1,0 +1,53 @@
+Bean is something which Spring will create/know during application startup.
+
+Dependency Injection happens only when the beans are created.
+
+Difference between @Controller and @RestController is that, @RestController has a parent annotation of @ResponseBody which
+converts the object returned by API to JSON object. So @RestController = @Controller + @ResponseBody
+
+There are 2 ways of dependency injection:-
+1. Field Injection --> Done with the help of @Autowired annotation
+2. Constructor
+
+When there are more than one constructor, and we want a particular constructor to be called for the initialization of the bean,
+we write @Autowired annotation over the top of that bean.
+
+We can make changes in application.properties file which will impact our Spring project. The property we define can be a
+pre-defined property which is present in spring's autoconfiguration jar, or it can be a custom property.
+
+To use the values defined in application.properties we use @Values annotation. For example, we did
+server.port = 8000,
+and we want to use 8000 in some other class we will write
+@Value("${server.port}") int a;
+This will give a, a default value of 8000.
+
+Every annotation has a parent annotation @Target. It means on what type of element, we can write that annotation. For example,
+target for @RestController is ElementType.Type, which means we can write @RestController only on top of Class, Interface or Enum.
+Writing it over a top of Field will give error. @Value can be applied only over a field, method, annotation and parameter. It is
+not applied over constructor. Similarly, @Autowired can be applied over constructor, field, method, parameter and annotation type.
+
+Both @Value and @Autowired is used for dependency injection, but @Value is mostly used for primitive data-type whereas @Autowired
+works on any kind of java class.
+
+There are 5 types of scopes in Spring:-
+1. Singleton -> Only one instance of bean is created, and it is shared among all the other classes which are injecting it.
+2. Prototype -> Every time when a class is injecting a bean of class whose scope is prototype, a new bean is created and added
+                in the application context.
+3. Request --> Scopes a single bean definition to the lifecycle of a single HTTP request; that is each and every HTTP request will
+               have its own instance of a bean created off the back of a single bean definition. Only valid in the context of a
+               web-aware Spring ApplicationContext.
+4. Session --> Scopes a single bean definition to the lifecycle of a HTTP Session. Only valid in the context of a web-aware
+               Spring ApplicationContext.
+5. Global Session --> Scopes a single bean definition to the lifecycle of a global HTTP Session. Typically only valid when used
+                      in a portlet context. Only valid in the context of a web-aware Spring ApplicationContext.
+By default, scope is Singleton.
+Generally, scope at child level has higher precedence compared to parent level
+
+Similar to @Component annotation, there is another annotation which is used to define bean which is @Bean. It is used for those
+classes over which we cannot write @Component annotation. For example,
+RestTemplate is a class which is present in spring-web.jar, and we have to create bean of it. As it is in byte code, we cannot
+write @Component in that class. In such cases, we use @Bean annotation.
+For Bean to work, we have to add @Configuration annotation at the top the class where we are defining @Bean. By default, the scope
+is Singleton and the bean created is stored in IOC container or Application Context and is shared after that. By default, bean name
+is function name or class name. We can also give our own custom name to a bean.
+If we have 2 beans with same name, one bean is created with singleton scope and other gets ignored.

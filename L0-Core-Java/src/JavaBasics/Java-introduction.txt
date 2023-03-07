@@ -1,0 +1,354 @@
+JDK --> compiles our .java files to .class files
+On compiling files "out" folder is created which contains .class files which are generated after compilation
+JRE --> JRE contains JVM where .class files runs
+External Libraries --> These are basically JAR files which comprises java JDK.
+.iml file --> Helper file for intelliJ. It isa util file for IntelliJ for importing files and doing indentation etc.
+
+
+Java is platform independent -> In java when we compile a program, java compiler converts the code into intermediate code which
+is known as java bytecode. This bytecode can run on any platform which has that platform specific JVM pre-installed. This JVM is which is
+different for different machines (Linux or Windows) is pre-installed in these machines.
+
+Java is statically typed i.e., we have to declare the type of variable before using it. Statically typed languages run fast as they don't have
+to find the type of variable at run-time.
+
+JDK --> JDK stands for Java Development Kit. JDK contains JRE ( Java Runtime Environment comprises JVM (Java Virtual Machine) and Java class libraries)
+and Dev Tools. JVM contains the required software to convert the byte code to machine specific binary code. JVM can be implemented using
+two ways :-
+1. Interpreter --> converts and executes the byte code to machine code
+2. JIT compiler --> Just in Time compiler which converts the byte code to machine code. It is the more preferred way as it is faster.
+Devtools are required for development and contains java compiler, java debugger, java document generator etc.
+
+
+
+
+Variables and Primitive Data Type
+
+Datatype represents what type and range of data we can store and how much memory can be allocated for this particular variable. In
+Java, we must specify the datatype of variable before using it. For this reason java is also known as statically typed language.
+
+Variables are of two types in JAVA :-
+1. Primitive -> These are basic types (int, char, double, float, boolean, byte etc.)
+2. Non-Primitive -> These are objects of some classes. These can be user defined also. (Array, String, Any other user defined Class)
+
+
+Primitive
+
+boolean --> true or false
+byte --> -128 to 127 (-2^7 to (2^7)-1) Byte is stored using 8 bits out of which, 1 bit is used as sign bit and remaining 7 are used to store values.
+Signed numbers in java used 2's complement representation.
+short --> -32768 to 32767 (-2^15 to (2^15)-1) (16 bit)
+int --> -2^31 to (2^31)-1 (32 bit)
+long --> -2^-63 to (2^63)-1 (64 bit)
+float --> single precision 32-bit
+double --> double precision 32-bit
+char --> single bit unicode characters (\u0000 to \uffff) 0 to (2^16)-1
+
+Non-primitive
+
+These are classes which can either be user defined or pre-defined library classes. ex- System is a pre-defined java class.
+Class Point{
+    int x;
+    int y;
+}
+Class Test {
+    public static void main(String []args) {
+        Point p = new Point();
+        p.x = 10;
+        p.y = 20;
+        System.out.println(p.x + " " + p.y)
+    }
+}
+O/p -> 10 20
+In above example p is a user-defined of Point type. We create variables of non-primitive types using new operator and access its
+members using dot operator. Non-primitive variables are always references which is not the case with primitive variables.
+
+Class Point{
+    int x;
+    int y;
+}
+Class Test {
+    public static void main(String []args) {
+        Point p1 = new Point();
+        p1.x = 10;
+        p1.y = 20;
+        Point p2 = p1;
+        p2.x = 30;
+        System.out.println(p1.x + " " + p2.x);
+    }
+}
+O/P -> 30 30
+Non-primitive variable holds reference to the memory location where object is stored. When we create p1, it holds the memory location
+of Point object with attributes 10 and 20. Now when we declare a new reference p2=p1, p2 also now references the memory location
+of p1. When we change the value of p2.x to 30, same change is reflected in the p1.x. For this reason O/P of above code is 30 30.
+This is not the case with primitive
+Class Test {
+    public static void main(String []args) {
+        int x1 = 10;
+        int x2 = x1;
+        x2 = 20;
+        System.out.println(x1 + " " + x2);
+    }
+}
+O/P -> 10 20
+In above snippet at x2=x1, new memory is allocated to x2 and value of x1 is copied to it.
+Non-primitives are stored in heap memory whereas primitives are stored in stack memory. Stack memory is used for function calls.
+If we write just Point p1, only reference of Point variable is created and no memory is allocated.
+If members of non-primitive type is not initialised then they are set with default values.
+Class Test {
+    public static void main(String []args) {
+        Point p1 = new Point();
+        System.out.println(p1.x + " " + p1.y);
+    }
+}
+O/P -> 0 0
+
+Wrapper Classes in Java
+
+There are built-in classes in java which allows us to have non-primitive datatype for every primitive data-type
+char -> Character
+int -> Integer etc
+
+int x = 10;
+Integer x = new Integer(10);
+In python every variable is a reference which is not the case in java(mix of primitive and non-primitive). In OOP's paradigm many times
+we have to deal with objects(non-primitive variables) for which wrapper classes are used. Java also has a concept of generics where
+we can pass datatype as an argument and create objects of a particular datatype. Whole java collections framework is generic based.
+Java generics don't work for primitive type and in such scenarios also wrapper classes are needed for example ArrayList of Integer type.
+
+Java supports primitive type as they come from C/C++ legacy. Also, primitive type variables are more efficient as they avoid extra
+overhead.
+
+Autoboxing and Unboxing
+public class AutoboxingAndUnboxing {
+    public static void main(String[] args){
+        int x1 =10;
+        Integer x2 = x1; //Autoboxing
+        int x3 = x2;     //Unboxing
+        System.out.println(x1);
+        System.out.println(x2);
+        System.out.println(x3);
+    }
+}
+Autoboxing --> No explicit typecasting is needed, int gets converted to Integer automatically.
+Unboxing   --> No explicit typecasting is needed, Integer gets converted to int automatically.
+public class AutoboxingAndUnboxing {
+    public static void main(String[] args){
+        Integer x1 = 400;
+        Integer x2 = 400;
+        if(x1==x2){
+            System.out.println("Same");
+        }
+        else {
+            System.out.println("Not same");
+        }
+    }
+}
+O/P --> Not same
+x1 and x2 are two separate object references. If one of them had been of primitive datatype, auto-boxing and un-boxing would have
+happened and "Same" would have been the output. Java also behaves strangely in some cases. If value is small say 4, then the O/P
+will be "Same". This is because java caches some literals, so after creation of object reference for x1, when it is about to create
+reference for x2, it searches in its cache. If a reference is found, then the same gets allocated to x2.
+
+Type Conversion
+
+Widening or implicit conversion
+byte -> short -> int -> long -> float -> double
+                  ^
+                  |
+                 char
+float stores exponents separately, so we might lose precision but range of values float(32-bits) can store is bigger than long(64-bits).
+ int x = 100;
+long y = x;
+float z = y;
+System.out.println(x+" "+y+" "+z);
+O/P -> 100 100 100.0
+
+Narrowing or explicit conversion
+double d = 65.4;
+int i = (int) d;
+char c = (char) i;
+System.out.println(d+" "+i+" "+c);
+O/P -> 65.4 65 A
+
+Java Input
+
+We can do it in two types:-
+1. BufferedReader -> Simple class used to read a character or sequence of characters.
+2. Scanner -> It is an advanced method which was added in later versions of java. It can read formatted inputs to read data of different
+              data types.
+Buffered Reader
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+System.in --> It is an input stream that gives us a stream of bytes through standard input(keyboard) and 'in' is object of input stream.
+InputStreamReader --> Converts stream of bytes to stream of characters.
+BufferedReader --> It expects a stream of character to read data from.
+br --> Object of bufferedReader which can read data from keyboard.
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+System.out.println("Enter a String");
+String str = br.readLine();
+System.out.println("You Entered "+str);
+I/P -> JAVA
+O/P -> You Entered JAVA
+
+To read integer
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+System.out.println("Enter a String");
+String str = br.readLine();
+System.out.println("Enter a Number");
+int x = Integer.parseInt(br.readLine());
+System.out.println("You Entered "+str+" "+x);
+I/P -> JAVA
+       8
+O/P -> You Entered JAVA 8
+
+BufferedReader throws a checked exception(IOException) and is imported from java.io package
+
+Scanner
+It is easy to use compared to BufferedReader. For this we have to import class java.util.Scanner
+Scanner has basic data type specific functions(like integer and float). It was added in later versions to simplify input reading process.
+
+Scanner sc = new Scanner(System.in);
+String str = sc.nextLine();
+System.out.println("You Entered String "+str);
+int x = sc.nextInt();
+System.out.println("You Entered Integer "+x);
+float f = sc.nextFloat();
+System.out.println("You Entered Float "+f);
+
+I/P -> Java
+        8
+        1.8
+O/P -> You Entered String Java
+       You Entered Integer 8
+       You Entered Float 1.8
+
+Buffered reader is faster than Scanner as the latter does more post-processing of the input. Also buffered reader is more flexible
+as we can specify the buffer size that we want to read at a time. Also, in general buffered reader has larger buffer for reading data
+than scanner. Buffered reader is also synchronised, so in cases when we use multiple threads, buffered reader should be preferred.
+The above advantages comes to play when we are reading larger input, but in general scanner serves the purpose by make it easy.
+
+Java Output
+
+To produce something on the screen, the methods are :-
+1. System.out.print() --> prints output without appending a new line
+2. System.out.println() --> prints output with appending a new line
+3. System.out.format()
+4. System.out.printf()
+
+3 and 4 are different methods which provides the same functionality.
+3 or 4 are particularly used for formatted outputs when we have inputs like floating point numbers, date, time etc.
+1 & 2 is used to print primitive types by converting them into string.
+
+int x = 100;
+System.out.format("Value of x is %d\n" + x);
+
+O/P -> Value of x is 100
+we can have any number of placeholders in format statement.
+
+System.out.println(pi);
+System.out.format("%.2f\n",pi); //print 2 digits after decimal
+System.out.format("%5.2f\n",pi);//print 5 characters in total and 2 digits after decimal. The remaining characters are filled with space.
+System.out.format("%05.2f\n",pi);//print 5 characters in total and 2 digits after decimal. The remaining characters are filled with 0.
+
+O/P -> 3.141592653589793
+       3.14
+        3.14 // extra space is added to print 5 characters.
+       03.14 // extra 0 is added to print 5 characters.
+
+if we give 3.2f instead of 5.2f, it will still print 3.14 as it is the minimum requirement
+
+Command line Arguments in Java
+
+Many times while writing java programs we need to built utility which can be used on command prompt. In such cases we might need
+users to provide input parameters from command prompt. For example a calculator can be made from prompt.
+
+public class CommandLineArguments {
+    public static void main(String []args){
+        if(args.length > 0){
+            System.out.println("Arguments are ");
+            for(String str : args){
+                System.out.print(str + " ");
+            }
+        }
+        else {
+            System.out.println("No Arguments");
+        }
+    }
+}
+
+Switch Statement
+
+From java 7 onwards, we can have strings also as part of switch cases which is not the provided by C/C++.
+
+When we pass non-primitives to function they are passed as references whereas for primitive types, they are passed by value.
+
+
+Classes & Objects
+
+In java when we create object, which is non-primitive data-type, memory is allocated in the heap, and we don't have to worry about
+its de-allocation.
+
+Constructors are special functions which are called when an object is created. They do not have any return type and have same name
+as the class name. If we don't write our own constructor, then only compiler creates a default constructor, which initialises the members
+with some default values.
+
+This keyword refers to the current object for which the code is being executed.
+Chaining of functions and constructors are possible using this keyword
+
+Static Members
+The variables which are shared among all the objects of class are known as static variables. We can access static members either
+by using Class or by using objects.
+Static member methods mainly serve two purposes:-
+1. They are used to modify and access static variables. Static member variables can also be modified in non-static methods, but
+it is strongly recommended to use static member methods to do so.
+2. To write functional programming. They do-not require to be called by any object.
+Static methods cannot access non-static members and they do-not have access to this reference
+
+Class Members and access Modifiers
+
+Private -> Within the class
+Default -> Within the package
+Protected -> Within the package and child class of other packages.
+Public -> Anywhere
+
+Final keyword
+It can be used in 3 places:
+1. Variable (local, instance and class) -> No reinitialisation
+
+final variable can be initialised in 3 ways:
+i. final int x = 100;
+ii. final int x;
+    {x=100;}  //inside initializer block
+iii final int x;
+    Now x should be declared inside every constructor
+
+static final variables in java are treated as global constant variables for all the objects of a particular class. These variables
+are witten in caps
+
+2. Method -> No overriding
+3. Class -> No Inheritance
+
+Exception hierarchy in Java
+
+Anything that can be thrown as exception should be a subclass of Throwable class. Object class is superclass of Throwable class.
+Throwable class is superclass of all the exceptions and errors in Java.
+Throwable has two main subclasses, Error and Exception.
+Error class contains errors which are not in programmers hand, example virtualMachineError, IOError etc.
+Exceptions are of two types:-
+1. Checked -> These are checked during compile time, examples are FileNotFoundException, IOException etc.
+2. Unchecked -> These comes under RunTimeException class which contains exceptions like ArithmeticException, NullPointerException
+IndexOutOfBoundException etc.
+
+throws keyword is used to tell the compiler that this code can throw a particular type of exception while executing. If the code
+throws such exception, then it should be handled or passed to the function calling it.
+
+Multithreading
+
+Advantages are:-
+1. Parallelism
+2. Better Utilization
+
+In java all threads are managed by JVM. Two ways to create threads in java are:-
+1. By extending Thread class.
+2. By implementing Runnable interface.

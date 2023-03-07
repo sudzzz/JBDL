@@ -1,0 +1,9 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¸Èö¨
+o
+java:S4276"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(âŸ”Ç8×âàñŞ0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(·Š·£8øâàñŞ0
+L
+java:S1197"*Move the array designators [] to the type.(º ìıÿÿÿÿ8úâàñŞ0
+o
+java:S4276"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(°ãÒã8çãàñŞ0

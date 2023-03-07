@@ -1,0 +1,22 @@
+Encapsulation and Data Hiding
+
+Object stores its state in fields and exposes its behaviour through methods. Encapsulation is hiding internal state(from the outside
+classes) and requiring all interaction to be performed through an object's publicly exposed methods. It ensures that sensitive data
+is always hidden.
+
+Encapsulation is achieved using access modifiers by declaring class variables/attributes as private and by defining getter and setter
+methods to access and update private variable
+
+Inheritance
+
+It is a way to organize set of interrelated classes. The class whose features are inherited is known as super class whereas class,
+who inherits is known as subclass. Subclass can add its own methods and variables other than super class. Inheritance is achieved
+by using "extends" keyword.
+A child class can inherit any method of its parent class except the private and the final methods.
+Multiple and hybrid inheritance is not allowed in java.
+
+Interfaces
+
+It allows multiple inheritance in java. It specifies what a class must do and does not specify how. Members defined in interface
+are by default public static and final. If a class implements an interface, then it should implement all the methods defined in
+that interface. If it is not implementing, then the class must be declared abstract.

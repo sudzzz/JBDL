@@ -1,0 +1,15 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ý†ìƒþÿÿÿÿ
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(œ¤‡–þÿÿÿÿ8á§±ˆä0
+C
+java:S1170	"!Make this final field static too.(Ë¡ˆ÷þÿÿÿÿ8â§±ˆä0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(åÖó€üÿÿÿÿ8Š¨±ˆä0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¤ÒÁè8Š¨±ˆä0
+]	java:S125"<This block of commented-out lines of code should be removed.(üÐÍÐÿÿÿÿÿ8‹¨±ˆä0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(š—°øÿÿÿÿ8Œ¨±ˆä0
+W
+java:S1854""5Remove this useless assignment to local variable "o".(ŒœäŠýÿÿÿÿ8Œ¨±ˆä0
+U	java:S106!"9Replace this use of System.out or System.err by a logger.(îÑÀ§8¨±ˆä0
+H
+java:S1481""&Remove this unused "o" local variable.(ŒœäŠýÿÿÿÿ8¨±ˆä0
+]	java:S125'"<This block of commented-out lines of code should be removed.(Œ®˜¾üÿÿÿÿ8Ž¨±ˆä0

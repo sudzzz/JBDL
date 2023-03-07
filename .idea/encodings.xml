@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/L-10-Spring-JPA/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L-10-Spring-JPA/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L-21-Kafka-Intro/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L-21-Kafka-Intro/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L10-11-Spring-JPA-Hibernate/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L10-11-Spring-JPA-Hibernate/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L11-MultipleDatasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L11-MultipleDatasource/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L12-13-14-20-MinorProject1And2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L12-13-14-20-MinorProject1And2/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L15-16-Redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L15-16-Redis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L17-Spring-Security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L17-Spring-Security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L18-Spring-Security-In-Memory/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L18-Spring-Security-In-Memory/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L19-Spring-Security-User-Details/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L19-Spring-Security-User-Details/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L21-Kafka-Intro/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L21-Kafka-Intro/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L21-Spring-OAuth2.0/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L21-Spring-OAuth2.0/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L23-24-MajorProject-Ewallet/notification-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L23-24-MajorProject-Ewallet/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L23-24-MajorProject-Ewallet/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L23-24-MajorProject-Ewallet/transaction-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L23-24-MajorProject-Ewallet/user-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L23-24-MajorProject-Ewallet/utils/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L23-24-MajorProject-Ewallet/wallet-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L4-Maven-Calculator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L4-Maven-Calculator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L4-Maven/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L4-Maven/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L5-L6-Spring-Boot/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L5-L6-Spring-Boot/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L7-Rest-Apis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L7-Rest-Apis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L8-L9-MySQL/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/L8-L9-MySQL/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

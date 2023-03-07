@@ -1,0 +1,18 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÿ°t
+b
+java:S1854"@Remove this useless assignment to local variable "shortNumbers".(îÚÜ–şÿÿÿÿ8Š‰°ä0
+S
+java:S1481"1Remove this unused "shortNumbers" local variable.(îÚÜ–şÿÿÿÿ8Š‰°ä0
+o
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(œçÖß8 †Š°ä0
+]	java:S125!"<This block of commented-out lines of code should be removed.(ööÓØøÿÿÿÿ8Š‰°ä0
+{
+java:S2142("^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8‘Š‰°ä0
+Z	java:S106'"9Replace this use of System.out or System.err by a logger.( æÖ“şÿÿÿÿ8Š‰°ä0
+U	java:S106/"9Replace this use of System.out or System.err by a logger.(û÷Ì8Š‰°ä0
+{
+java:S2142:"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8èè‰°ä0
+]	java:S125?"<This block of commented-out lines of code should be removed.(’‚Òµûÿÿÿÿ8¯Š‰°ä0
+V
+java:S1117C":Rename "result" which hides the field declared at line 11.(¶¡Èu8³Š‰°ä0

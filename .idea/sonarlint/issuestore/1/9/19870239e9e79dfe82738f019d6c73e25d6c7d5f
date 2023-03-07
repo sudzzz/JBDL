@@ -1,0 +1,28 @@
+
+f
+java:S1192O"KDefine a constant instead of duplicating this literal " thread = " 6 times.(ïèÀ¥ýÿÿÿÿ
+\
+java:S11924"FDefine a constant instead of duplicating this literal " and " 3 times.(Ï…êç
+>
+java:S1604""(Make this anonymous inner class a lambda(±¢
+C
+java:S1604("(Make this anonymous inner class a lambda(æÇ²íúÿÿÿÿ
+>
+java:S1604."(Make this anonymous inner class a lambda(¥ûûÌ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Í—©†ùÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(±í“á
+N	java:S106"9Replace this use of System.out or System.err by a logger.(‚¨Ö§
+N	java:S1064"9Replace this use of System.out or System.err by a logger.(Ï…êç
+S	java:S1069"9Replace this use of System.out or System.err by a logger.(®ýáëûÿÿÿÿ
+M	java:S106A"9Replace this use of System.out or System.err by a logger.(ü„ê!
+S	java:S106G"9Replace this use of System.out or System.err by a logger.(¸šñÙüÿÿÿÿ
+S	java:S106O"9Replace this use of System.out or System.err by a logger.(ïèÀ¥ýÿÿÿÿ
+S	java:S106R"9Replace this use of System.out or System.err by a logger.(Î´¬½ýÿÿÿÿ
+S	java:S106U"9Replace this use of System.out or System.err by a logger.(ÕÐë¸ûÿÿÿÿ
+N	java:S106X"9Replace this use of System.out or System.err by a logger.(Æ¦”‰
+N	java:S106]"9Replace this use of System.out or System.err by a logger.(ýËƒò
+S	java:S106`"9Replace this use of System.out or System.err by a logger.(Õ­¹­ÿÿÿÿÿ
+N	java:S106c"9Replace this use of System.out or System.err by a logger.(ŠÏÿð
+N	java:S106f"9Replace this use of System.out or System.err by a logger.(¡‡¿·
+U	java:S106i"9Replace this use of System.out or System.err by a logger.(×þ„ 8óéÖ¢ä0
+Z	java:S106n"9Replace this use of System.out or System.err by a logger.(ÒÕú×ýÿÿÿÿ8á„î£ä0

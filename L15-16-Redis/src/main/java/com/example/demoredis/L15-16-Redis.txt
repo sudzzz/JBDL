@@ -1,0 +1,104 @@
+Disadvantages of caching :-
+1. Rams are expensive.
+2. It cannot store all the data so cache storing algorithms are applied to make the best use of cache (like LRU, LFU)
+
+Caching should be used in scenarios where we know that hit ratio will be good around 60-70%.
+
+There are two ways to remove data from cache:-
+1. Cache evicting the data
+2. We are setting an expiry while inserting data in cache.
+
+
+Different types of caching are : -
+1. Distributed Caching. - Advantages are disadvantages of Localised caching whereas disadvantages are advantages of localised caching.
+2. Localised Caching. - Disadvantages are
+                        i) inconsistency of data
+                        ii) duplicate copies of data
+                        iii) cache miss is high
+                        Advantages :-
+                        i) Communication between redis and spring-boot server is fast
+3. In-memory cache - There is in-built cache in the spring application, and we do not need any redis server for caching purpose.
+                     Guava cache by Google is an example of In-memory cache. Apart from this, it's advantages and disadvantages
+                     are similar to that of Localised caching.
+
+
+Redis --> Default port is 6379. It is a combination of database and cache. It can store data in form of key-value pairs in different
+          logic separated databases. This gives Redis the functionality of database. But this data is stored in primary memory
+          which gives it the functionality of cache.
+          1. Redis acts as a cache for real time queries.
+          2. It also persists the data on to the disk in a background thread to provide persistence capability.
+                Disadvantages of 2:-
+                2.1 Load/Start-up time can be high -> It is tackled by storing the db in compressed form
+                2.2 It takes memory in both primary and secondary memory.
+
+Datatype supported in Redis
+Key -> Only string
+Value -> String, Set<String>, List<String>, Hash<String,String>, Geographic location, bitset, RedisStream
+
+The threshold value size that can be stored in key is 512MB.
+
+commands
+set -> set k1 v1 //set key k1 with value v1
+       setex k1 30 V1 //set K1 with value v1 and expiry time 30 seconds.
+       psetex k1 3000 v1 //set K1 with value v1 and expiry time 3000 milliseconds.
+ttl -> ttl k1 //to check for how much time this key will live
+       when ttl becomes -2, it means that the key has expired.
+       if ttl of key is -1, it means that key will never expire.
+       pttl -> gives time in milliseconds.
+get -> get k1//get value stored in K1.
+del -> del k1 //to delete k1
+incr -> incr k1 // increments value v1 by 1, if it contains a number. Redis can return integer, but it always stores data in string.
+decr -> decr k1 // decrements value v1 by 1, if it contains a number. Redis can return integer, but it always stores data in string.
+
+lpush/rpush -> Pushing from the left/right of list
+               lpush jbdl33 sudhir //pushes sudhir in a list name jbdl33 . It returns the number of element in the list.
+               lrange jbdl33 0 0   //gets the left range of list jbdl33 from 0 index to 0 (start and stop (0,0) are inclusive).
+               if we give stop as -1, it will list all the elements present in the list
+               if we give stop as -2, it will list all the elements except the last one present in the list.
+
+lpop/rpop -> Popping from left/right of list
+
+sets are unordered whereas lists are ordered.
+
+sadd -> adding elements in the set
+        example - sadd people Jim John // adds two strings Jim and John in the set
+smembers -> getting the elements present in the set
+            example - smembers people // return Jim and John
+sismember -> to check if a value is present in the set
+             example - sismember people Jim // returns 1 which means Jim is present in set people.
+srem -> to remove element from the set. It removes particular element from the set.
+        example srem people Jim //removes Jim from the set people. Its complexity is O(N)
+spop -> pops the element from the set. If count is not given, it pops out top element otherwise pops the number of elements
+        given in the count. It removes random elements from the set.
+        spop people // pops 1 element. O(1) complexity.
+        spop people 3 // pops 3 elements from set people. O(N) complexity. N is the number of count.
+
+Hashes are similar to hashmap in java
+
+hset -> to set hashes in redis
+        example - hset person_attr name Rahul age 20 // There are two fields in hash person_attr name and age with value rahul and 30
+hget -> works only on one field, not multiple fields.
+        example - hget person_attribute name // Give Rahul as result
+hmget -> to get response for multiple fields
+         example - hmget person_attribute name age // Give Rahul and 20 in a list
+hgetall -> gets all the fields of a particular key
+           example - hgetall person_attribute // Gives all the fields and its value in form of single array
+hdel -> deletes fields from the hash key.
+        example - hdel person_attribute name age
+hkeys -> gets all the keys of the hash key
+hvals -> gets all the values of the hash key
+hexists -> checks if a field is present in the hash key
+        example - hexists person_attribute name
+
+There are two popular drivers which helps to store data in redis and do underlying operations to convert  and store java object in
+redis.
+1. Lettuce (default)
+2. Jedis
+
+Converting an object to byte stream is known as serialization whereas converting byte stream to java object is deserialization.
+String to byte stream is done by StringRedisSerializer.
+Any java object to byte stream is done by JdkSerializationRedisSerializer
+
+RedisTemplate class have implementations defined which are similar to JPA and Lettuce has underlying functions which interact with
+Redis like Hibernate does with MySQL.
+

@@ -1,0 +1,11 @@
+
+p
+java:S3305"ZInject this field value directly into "personEntityManager", the only method that uses it.(µöý¶
+V	java:S1251"<This block of commented-out lines of code should be removed.(³¬°”úÿÿÿÿ
+V	java:S125?"<This block of commented-out lines of code should be removed.(›¢Úåüÿÿÿÿ
+a
+java:S1128"KRemove this unused import 'org.springframework.context.annotation.Primary'.(“ð›ß
+l
+java:S1128"VRemove this unused import 'org.springframework.orm.jpa.LocalEntityManagerFactoryBean'.(öõŽœ
+G
+java:S1128"1Remove this unused import 'java.util.Properties'.(¬µŽ²

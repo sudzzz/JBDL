@@ -1,0 +1,4 @@
+GET - Retrieve some info
+POST - Save some info on the server
+DELETE - Delete something on the server
+PUT - Updates the already existing info on the server

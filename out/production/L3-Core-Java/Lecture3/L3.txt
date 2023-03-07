@@ -1,0 +1,11 @@
+Command to get name of Current Thread is --> Thread.currentThread().getName(). currentThread() is a native function.
+There are 2 ways of creating a thread:-
+1. By using Thread Class
+2. By using Runnable Interface
+
+In Thread class, there are two functions:-
+1. start -> It is used to create a new thread at core. It internally calls start0() function which is a native call, which creates
+a new thread. After a thread is created, run() function is called.
+2. run
+
+MapToObj is used to covert IntStream --> Stream<Integer>

@@ -1,0 +1,10 @@
+
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ÅÈü8±™øñŞ0
+E
+java:S1604"(Make this anonymous inner class a lambda(½ÅÈü8¶ñøñŞ0
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¸Èö¨
+n
+java:S4276"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(¨‹’8¿ñøñŞ0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(·Š·£8­šøñŞ0
+L
+java:S1197"*Move the array designators [] to the type.(º ìıÿÿÿÿ8®šøñŞ0

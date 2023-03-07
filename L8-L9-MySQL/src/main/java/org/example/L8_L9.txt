@@ -1,0 +1,73 @@
+MVC architecture
+Model - It represents real world entity. It is related to database
+View - It represents the frontend of the application.
+Controller - It is an interface between frontend and backend. It is the entry point where backend logic starts.
+
+
+Different layers in MVC
+Controller (The point where request enters backend) --> Service Layer (Business logic is implemented here) ---> Repository (It
+is also called DAO(Data Access Object) which interacts with DB. It creates Model) --> Model (It is the entity object which is
+finally stored in the database.)
+
+@AllArgsConstructor --> Creates parameterized constructor of the class in when the class is compiled. Can be seen in Target folder.
+@NoArgsConstructor --> Creates a default constructor for the class when it is compiled. Can be seen in Target folder.
+@Data --> Combination of @ToString + @EqualsAndHashCode + @Getter + @Setter + @RequiredArgsConstructor
+
+@Builder --> It helps in setting the attributes of the class. For example, if we have to set the object of Person Class, we will
+do it in following way. We can add the attributes in any order we want.
+Person p = Person.builder()
+            .id(1)
+            .firstName("Sudhir")
+            .lastName("Daga")
+            .age(24)
+            .build();
+
+We can also make builder object, attach some attributes to it and then call another function to attach remaining properties to it.
+
+Person.PersonBuilder personBuilder = Person.builder();
+personBuilder.firstName("Sudhir").lastName("Daga");
+
+Person p = setFn(personBuilder);
+
+public static Person setFn(Person.PersonBuilder personBuilder){
+    int age = 10;
+    return personBuilder.age(age).build();
+}
+
+To avoid boiler code validations in our controller we add a dependency named spring-boot-starter-validation of version 2.6.6.
+In it there are some annotations like @NotNull and @NotBlank (checks if attribute is neither null nor empty) which helps us with
+the validations of the request body we get from frontend. To apply these, we have to add @Valid annotation in front of the request
+body
+
+If we return normally we get status of 200. But to get status of our choice, we need to return ResponseEntity<>(). It is a class present,
+in spring-web and is used to return a body along with a status.
+
+@ControllerAdvice --> Whenever any controller is throwing any exception, the class which have this annotation gets triggered. It
+is used in config files where exception handling can be managed.
+
+
+executeUpdate --> returns 1 for DML operations like insert, update and delete. It gives 0, otherwise.
+executeQuery --> for select statement.
+
+Hibernate is ORM (Object Relation Mapping). Object is our java class, Relation is the database. Hibernate helps in mapping java
+class to entity structure. It is only used for relational databases and not for non-relational databases like Mongodb.
+
+JDBC : Protocol which is used from Java application to relational db.
+JDBCTemplate : Dependency which allows you to map your java object to db relation just like hibernate.
+
+JPA --> Java Persistence API
+
+Hibernate is analogous to a class and JPA is analogous to an interface. Hibernate implements JPA.
+JPA internally uses JDBC.
+
+offset  = page number * page size
+
+pagination concept
+
+query to show first 10 rows (For pagination to show 10 records for frontend on page 1)
+
+select * from person offset 0 limit 10;
+
+query to show next 10 rows (For pagination to show 10 records for frontend on page 2)
+
+select * from person offset 10 limit 10;

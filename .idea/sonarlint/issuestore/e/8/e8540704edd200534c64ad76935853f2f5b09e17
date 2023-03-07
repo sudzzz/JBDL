@@ -1,0 +1,5 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÿ°t
+\
+java:S1612":Replace this lambda with method reference 'Thread::start'.(¼ğ­Äøÿÿÿÿ8ªŠ“°ä0
+T	java:S106"9Replace this use of System.out or System.err by a logger.(œÕë{8§°ä0

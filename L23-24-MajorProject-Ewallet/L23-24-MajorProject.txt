@@ -1,0 +1,3 @@
+Dependencies defined at parent(pom) level are automatically inherited by modules which are at child level.
+
+Topic name should depend on the functionality performed by the producer.

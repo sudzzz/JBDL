@@ -1,0 +1,41 @@
+In Maven, there are 3 types of repositories:-
+1. Central Repository -> Public and accessible to all. It is present in cloud.
+2. Remote Repository -> Private and accessible only within an organisation. It is also present in cloud. Example - amazon.com
+3. Local Repository -> Private to user and present in local machine.
+Whatever repositories which are downloaded are added to class path which is nothing but local repository. By default, it is stored
+in .m2 folder inside local machine.
+Repository is a collection of data(artifacts)
+
+1. Maven scans all the dependencies from pom.xml
+2. For every dependency, it does the following process:-
+    2.1. It searches that dependency in the local repository. If found, it simply sets it to the project.
+    2.2. If the dependency is not present in the local repository, maven downloads it from the remote repository(if configured)
+         and stores it in local repository.
+    2.3. If the dependency is not present in the remote repository, maven downloads it from the central repository and stores it
+         in local repository.
+    2.4. If the dependency is not present in the central repository, error will be given by the maven and process stops.
+3. Local,remote and central repositories are common for all the projects. There are no project based repositories.
+
+
+Lifecycle of Maven
+1. Clean --> Cleans the "target" folder. "out" is for normal java projects, "target" is for maven projects. It contains the .class
+             files. This only runs, when it is explicitly called.
+2. Validate --> It validates the structure of the project and checks if main and test packages are present or not.
+3. Compile --> It does compilation checks. These checks are performed only on "main" directory and compilation errors in "test"
+               directory are not detected in this phase.
+****** Every phase has some plugins attached to it. For example. Compiler has 3 plugins:-
+i) compiler-compile
+ii) compiler-help
+iii) compiler-testCompile
+****** From validate till last, all the phases run in sequential manner. For example, if we run Test, validate->Compile->Test all
+will be executed.
+
+4. Test --> compiler-testCompile is a plugin which is used only in test phase and not in compile phase. When Test phase runs,
+            it automatically starts its cycle from validate->Compile->Test. In this way, all the cycles before Test also gets
+            executed. It's main purpose is to compile files in test folder but due to execution of lifecycle in sequential
+            manner, it executes all the lifecycles before it. The .class files created are stored in target folder.
+5. Package --> It downloads dependencies from pom.xml and creates a jar file in target folder. Jar naming convention is
+                "artifactId-VersionId.jar". It does not take groupId into consideration.
+6. Verify --> It is just an intermediate step to check if the jar file is present in target folder or not.
+7. Install --> It installs the jar from target folder to .m2 folder and also adds it in local repository(class path) along with
+                pom.xml. Pom is required for parent dependencies to get downloaded.

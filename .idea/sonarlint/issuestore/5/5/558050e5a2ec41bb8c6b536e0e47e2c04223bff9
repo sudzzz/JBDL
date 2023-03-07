@@ -1,0 +1,12 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÿ°t
+`
+java:S3518"CMake sure this expression can't be zero before doing this division.(ŠÒ‡ı8•ØØªä0
+R
+java:S1854"5Remove this useless assignment to local variable "a".(ŠÒ‡ı8™ØØªä0
+M	java:S106"9Replace this use of System.out or System.err by a logger.(Ã–Ë+
+C
+java:S1481"&Remove this unused "a" local variable.(ŠÒ‡ı8ÔÙØªä0
+{
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ÕÙØªä0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¨˜¾ê8ÕÙØªä0

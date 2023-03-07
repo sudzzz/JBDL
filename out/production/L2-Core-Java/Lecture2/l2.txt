@@ -1,0 +1,15 @@
+Streams will only run when it has terminal operations. There are 2 types of operations in streams:-
+1. Intermediate operations -> it takes streams as input, perform some operations and then returns streams as output.
+2. Terminal operations -> It takes streams as input and gives single element as output.
+
+Number of operations is streams is same as compared to number of operations in for loop. It only executes an element once.
+
+Core is the smallest unit of out infrastructure where a thread can run. One thread can run on one core.
+Command to check number of cores present in our machine is "Runtime.getRuntime().availableProcessors()"
+
+We can increase our number of threads from JVM, but it is not recommended as it can lead to deadlock at OS level.
+
+The result of the stream which we get, depends on three things:-
+1. Type of stream we are using (Parallel or Sequential)
+2. Type of Collection we are using(Ordered(e.g. List) or Unordered(e.g. Set)
+3. Type of Terminal function we are using(like findFirst() or findAny())

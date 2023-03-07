@@ -1,0 +1,100 @@
+Dependency needed for JPA -> spring-starter-data-jpa along with driver of underlying rdbms database.
+
+Hibernate is the downstream which communicates with database, but it does not provide the complete abstraction. On other hand, JPA
+is a kind of aggregator which gives small tasks to Hibernate.
+
+@Entity annotation coming from javax.persistence is used to identify a class which needs to be mapped to table schema in database.
+It is a contract set up by JPA which tells hibernate to map this class to a table.
+
+@Table annotation is used to give name of the table of user choice so that it can be different from the class name.
+@Column annotation is used to give name of the column by defining it over the top of attribute in class.
+@Id annotation is used to declare which attribute will be primary key of the table after mapping. Without @Id annotation, JPA
+implementation will not be applied. It is restriction of hibernate to map the object to table.
+
+If we want to declare attributes in class but does not want to map it to the table of database, we can use 2 ways:-
+1. Declaring it as static
+2. Using @Transient keyword above the attribute. This @Transient is different from the hibernate lifecycle transient.
+
+If we declare the attribute with transient keyword, for example
+private transient String areaCode;
+While storing the object, the default value of this attribute(null) will get mapped and stored despite the real value it holds.
+
+Hibernate internally has a session service, and it interacts with underlying database using sessions.
+
+There are 3 types of objects in hibernate:-
+1. Transient --> The objects are not present in the hibernate session are Transient objects.
+2. Persistent --> Objects which are there in hibernate session is known as persistent objects. All the objects which are retrieved
+                  from or stored in the database in one session are persistent objects.
+3. Detach --> The object from persistent state after the session expires are in detached state.
+
+                                        ------------------------------
+                                        |                            ↑
+                                        ↓                            |
+Lifecycle of hibernate objects are Transient ---> Persistent ---> Detach
+
+persist function in EntityManager --> similar to insert into table
+merge function in EntityManager --> similar to update table
+remove function in EntityManager --> similar to delete from table
+find function in EntityManager --> similar to select * from table
+
+PersonRepository extends JpaRepository<Person, Integer>
+JpaRepository<T,ID> --> T is the object i.e. the name of class which we want to map to a table in database
+                        ID is the datatype of the attribute which is defined primary key for the table.
+
+Hierarchy of interfaces through which we implement multiple inheritance.
+
+Repository --> CrudRepository --> PagingRepository --> JpaRepository
+
+MongodbRepository, CassandraRepository etc. are siblings of JpaRepository
+
+findByID() function of JpaRepository searches for the primary key defined in the class with @Id annotation.
+
+In JPA to establish connection with database, we don't have to write code for Connection manager. It can be done by adding few
+properties in application.properties file in resources package like-
+spring.datasource.url=jdbc:mysql://localhost:3306/jbdl33_jpa?createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=password
+
+createDatabaseIfNotExist=true is added in the spring.datasource.url so that database can be created if it is not present. To create
+tables of classes which are annotated with @Entity, we add one more property which is -
+spring.jpa.hibernate.ddl-auto=update.
+
+HikariPool is required by JPA to establish connection with Hibernate.
+
+spring.jpa.hibernate.ddl-auto --> It is for DDL (Data Definition Language). Create, Alter are examples of DDL commands.
+spring.jpa.show-sql=true --> This command will show all the sql commands which will get executed by the hibernate.
+
+Hibernate converts all the camel cases into two words separated by underscore. Hibernate convert all the uppercase into lowercase.
+
+spring.jpa.hibernate.ddl-auto=create-drop --> create + dropping at the session's end. If we give create, it will drop the tables if
+it exists before and then create new tables. For create-drop, the tables are dropped both at time of starting and ending the session.
+
+For production environment, it is safe to use update. Update, creates tables if it does not exist before. It never drops any table.
+
+To get auto generated and auto incremented id for our table, there is an annotation in JPA i.e. @GeneratedValue. It allows to
+choose strategy by which we want to generate id's. It is an enum whose default value is AUTO. Two popular strategies are:-
+1. Auto --> Hibernate will generate the id --
+            create table person(id int primary key, ...)
+            insert into person(id,name,...) values (<id>,<name>,...)
+            When we use auto, a new table hibernate_sequence is created in the database which maintains sequencing for generating
+            id. It is a single source of truth for all the tables present in the database. All the tables will get their id form
+            hibernate_sequence table.
+            We should use Auto mode only when we are inserting through hibernate only and not from other sources. In other scenarios
+            application will fail as there might be duplicate primary key error when we insert from other sources but the number
+            gets updated by hibernate.
+2. Identity --> Underlying database will generate the id --
+                create table person(id int primary key auto_increment,...)
+                insert into person(name,...) values (<name>,...)
+                No extra table is created and database at each table level will increment its id of primary key.
+
+Any column or table which is created in the underlying database will not be deleted by the hibernate. Hibernate only does additions
+and no deletions. It only has the capability to add new column or create new table.
+
+Hibernate can alter the table by adding column, but it does not support altering the table by adding constraint.
+-- alter table add column --> works fine
+-- alter table add constraint on name (UNIQUE) --> does not work.
+
+This is because changing/adding constraint on a table which already holds some data would create inconsistency.
+ABC, DEF, ABC, XYZ are the names. If we make the name column unique now, then it would lead to inconsistent data.
+
+@ConfigurationProperties --> we can load the prefix of the properties using this annotation.
