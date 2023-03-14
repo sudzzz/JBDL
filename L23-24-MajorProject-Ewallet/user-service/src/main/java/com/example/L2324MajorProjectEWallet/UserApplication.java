@@ -24,6 +24,7 @@ public class UserApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         List<User> adminList = userService.getAllAdmins();
+        List<User> serviceList = userService.getAllServices();
         if(adminList.isEmpty()){
             UserCreateRequest adminCreateRequest = UserCreateRequest.builder()
                     .name("Sudhir Daga")
@@ -35,6 +36,19 @@ public class UserApplication implements CommandLineRunner {
                     .userIdentifier(UserIdentifierEnum.PAN)
                     .userIdentifierValue("PQRST8502Q").build();
             userService.createAdmin(adminCreateRequest);
+        }
+        if(serviceList.isEmpty()){
+            UserCreateRequest serviceCreateRequest = UserCreateRequest.builder()
+                    .name("Transaction Service")
+                    .email("transaction@gmail.com")
+                    .phoneNumber("transaction-service")
+                    .password("txn@123")
+                    .dob("18-08-1998")
+                    .country("India")
+                    .userIdentifier(UserIdentifierEnum.SERVICE_ID)
+                    .userIdentifierValue("txn123")
+                    .build();
+            userService.createService(serviceCreateRequest);
         }
     }
 }

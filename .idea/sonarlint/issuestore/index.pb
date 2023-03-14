@@ -73,20 +73,14 @@ f
 6L4-Maven/src/main/java/org/example/MathOperations.java,6\8\689186777d2390df0374ba33cabca5383d45c178
 Y
 )L4-Maven/src/main/java/org/example/L4.txt,5\9\59b5a08ff14bb5f954d68e2857cc4821493bad18
-g
-7L4-Maven-Calculator/src/main/java/org/example/Main.java,d\c\dc3ecd097956459cb8f82459ed8f63a5446b17cc
 b
 2L5-L6-Spring-Boot/src/main/java/org/example/L5.txt,0\6\06b7ccf011249ca6d97e9bd818bf991315fca918
-\
-,L4-Maven/src/main/java/org/example/Main.java,4\e\4e505ec7ad462ebe6bd88edd05e54b082531a928
 K
 L4-Maven-Calculator/pom.xml,5\3\53792b8029f29e56494a58448573444c6522407b
 e
 5L5-L6-Spring-Boot/src/main/java/org/example/Demo.java,5\0\5074504e9259348092490aacdfa624e60577e572
 I
 L5-L6-Spring-Boot/pom.xml,7\5\75e743121426cbb8daa616dbbf4f24489e0e9374
-v
-FL5-L6-Spring-Boot/src/main/java/org/example/DemoSpringApplication.java,3\0\3046440caffe129050cf0bd55e415079776f4927
 `
 0L7-Rest-Apis/src/main/java/org/example/Book.java,c\3\c35f2a3b71ccc9506e9a84bc9ddcafe77adbe86b
 b
@@ -183,7 +177,5 @@ eL12-13-14-20-MinorProject1And2/src/main/java/com/example/minor1/controller/Tran
 aL12-13-14-20-MinorProject1And2/src/main/java/com/example/minor1/service/Impl/BookServiceImpl.java,d\8\d8546ba88bcb9e0a612702ee037c0967fd026ae5
 M
 L21-Spring-OAuth2.0/notes.txt,6\4\647df405c52364da38ef6fca67e3382c44b6a56f
-h
-8L23-24-MajorProject-Ewallet/notification-service/pom.xml,d\5\d5dc5ab64f12b64b846410bea683a87633adbc25
-g
-7L23-24-MajorProject-Ewallet/transaction-service/pom.xml,b\1\b1a2b4f54a7027e988b33b274bae006706ab8be2
+`
+0L23-24-MajorProject-Ewallet/user-service/pom.xml,8\6\861f4aa2428b6b3d587a6ac58582e4cfe5d2a3af

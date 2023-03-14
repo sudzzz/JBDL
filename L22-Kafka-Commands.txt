@@ -4,6 +4,7 @@ start kafka-server --> .\bin\windows\kafka-server-start.bat .\config\server.prop
 
 inside C:\kafka\bin\windows
 getting list of commands that can be applied --> .\kafka-topics.bat --help
+getting list of all kafka topics --> .\kafka-topics.bat --list --bootstrap-server localhost:9092
 creating a topic in kafka in --> .\kafka-topics.bat --create --bootstrap-server localhost:9092 --topic sample_topic
 
 describe a topic --> .\kafka-topics.bat --describe --bootstrap-server localhost:9092 --topic sample_topic

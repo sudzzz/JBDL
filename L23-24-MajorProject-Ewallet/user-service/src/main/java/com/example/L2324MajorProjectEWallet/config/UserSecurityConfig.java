@@ -18,6 +18,9 @@ public class UserSecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${users.user.authority}")
     private String userAuthority;
 
+    @Value("${users.service.authority}")
+    private String serviceAuthority;
+
     @Value("${users.admin.authority}")
     private String adminAuthority;
 
@@ -29,11 +32,13 @@ public class UserSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .httpBasic()//added so that the response of api will e in json form and not text/html.
+                .and()
                 .csrf().disable()
                 .authorizeHttpRequests()
                 .antMatchers(HttpMethod.POST,"/user/**").permitAll()       //sign-up of new account
                 .antMatchers("/user/**").hasAuthority(userAuthority)       //user driven actions
-                .antMatchers("/**").hasAuthority(adminAuthority)           //admin driven actions
+                .antMatchers("/**").hasAnyAuthority(adminAuthority,serviceAuthority)           //admin driven actions
                 .and()
                 .formLogin();
     }

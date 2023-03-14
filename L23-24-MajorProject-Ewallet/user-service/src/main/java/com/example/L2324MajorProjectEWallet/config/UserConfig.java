@@ -35,7 +35,7 @@ public class UserConfig {
     }
 
     @Bean
-    KafkaTemplate<String,String> getKafkaTemplate(){
+    public KafkaTemplate<String,String> getKafkaTemplate(){
         return new KafkaTemplate<>(getProducerFactory());
     }
 

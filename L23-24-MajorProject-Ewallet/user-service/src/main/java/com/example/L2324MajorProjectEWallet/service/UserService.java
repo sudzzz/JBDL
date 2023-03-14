@@ -13,8 +13,11 @@ public interface UserService extends UserDetailsService {
     User createUser(UserCreateRequest userCreateRequest) throws JsonProcessingException;
 
     User createAdmin(UserCreateRequest userCreateRequest);
+    User createService(UserCreateRequest userCreateRequest);
     List<User> getAllUsers();
 
     List<User> getAllAdmins();
+
+    List<User> getAllServices();
 
 }

@@ -36,6 +36,9 @@ public class UserServiceImpl implements UserService {
     @Value("${users.user.authority}")
     private String userAuthority;
 
+    @Value("${users.service.authority}")
+    private String serviceAuthority;
+
     @Value("${users.admin.authority}")
     private String adminAuthority;
     @Override
@@ -74,6 +77,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User createService(UserCreateRequest userCreateRequest) {
+        User service = userCreateRequest.to();
+        service.setPassword(encryptPwd(service.getPassword()));
+        service.setAuthorities(serviceAuthority);
+        return userRepository.save(service);
+    }
+
+    @Override
     public List<User> getAllUsers() {
        return userRepository.findByAuthorities(userAuthority);
     }
@@ -81,6 +92,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAllAdmins() {
         return userRepository.findByAuthorities(adminAuthority);
+    }
+
+    @Override
+    public List<User> getAllServices() {
+        return userRepository.findByAuthorities(serviceAuthority);
     }
 
     private String encryptPwd(String rawPwd){

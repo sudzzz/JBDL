@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -31,8 +32,16 @@ public class UserController {
 
     }
 
-    @GetMapping("/admin/all/users")
+    @GetMapping("admin/all/users")
     public ResponseEntity<List<User>> getAllUsers(){
         return new ResponseEntity<>(userService.getAllUsers(),HttpStatus.ACCEPTED);
+    }
+    @GetMapping("admin/all/adminUsers")
+    public ResponseEntity<List<User>> getAllAdminUsers(){
+        return new ResponseEntity<>(userService.getAllAdmins(),HttpStatus.ACCEPTED);
+    }
+    @GetMapping("/admin/user/{userId}")
+    public ResponseEntity<UserDetails> getUserDetails(@PathVariable("userId") String userId){
+        return new ResponseEntity<>(userService.loadUserByUsername(userId),HttpStatus.ACCEPTED);
     }
 }
