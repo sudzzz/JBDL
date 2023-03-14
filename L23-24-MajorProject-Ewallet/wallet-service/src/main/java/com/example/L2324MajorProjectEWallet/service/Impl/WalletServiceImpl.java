@@ -67,7 +67,7 @@ public class WalletServiceImpl implements WalletService {
         jsonObject.put(CommonConstants.TRANSACTION_CREATION_TOPIC_RECEIVER,receiver);
         jsonObject.put(CommonConstants.TRANSACTION_CREATION_TOPIC_AMOUNT,amount);
 
-        if(Objects.isNull(senderWallet) || Objects.isNull(receiverWallet) || senderWallet.getBalance()>=amount){
+        if(Objects.isNull(senderWallet) || Objects.isNull(receiverWallet) || senderWallet.getBalance()<amount){
             //fail the transaction
             jsonObject.put(CommonConstants.WALLET_UPDATE_TOPIC_STATUS, WalletUpdateStatusEnum.FAILED);
             kafkaTemplate.send(CommonConstants.WALLET_UPDATE_TOPIC,objectMapper.writeValueAsString(jsonObject));
