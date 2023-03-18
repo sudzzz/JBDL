@@ -20,6 +20,9 @@ partition at a time.
 If we have 2 brokers and n number of partitions, kafka will ensure that 1st broker has (n/2 +- 1) partitions which are
 leaders and 2nd broker has (n/2 +-1) partitions which are leaders.
 
+Relication factor is replicating the same data on multiple nodes. Partitioning is distributing the data amongst different
+queues.
+
 command to create partitions --> .\kafka-topics.bat --create --bootstrap-server localhost:9092  --partitions 3 --topic sample_topic_partition
 
 describe command of topic created with partition -->  .\kafka-topics.bat --describe --bootstrap-server localhost:9092 --topic sample_topic_partition
